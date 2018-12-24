@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :broodlings
   resources :options
   resources :special_rules
+
+  root "static#home"
 end
