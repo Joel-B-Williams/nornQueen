@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  points: 1
+  optional: false
+  stats: MyString
+  weapon: false
+  wargear: false
+  one_or_none: false
+  group: MyString
+
+two:
+  name: MyString
+  points: 1
+  optional: false
+  stats: MyString
+  weapon: false
+  wargear: false
+  one_or_none: false
+  group: MyString

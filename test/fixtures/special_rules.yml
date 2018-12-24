@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ruleholder_id: 1
+  name: MyString
+  text: MyString
+
+two:
+  ruleholder_id: 1
+  name: MyString
+  text: MyString

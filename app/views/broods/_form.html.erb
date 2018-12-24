@@ -1,0 +1,32 @@
+<%= form_with(model: brood, local: true) do |form| %>
+  <% if brood.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(brood.errors.count, "error") %> prohibited this brood from being saved:</h2>
+
+      <ul>
+      <% brood.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :roster_id %>
+    <%= form.number_field :roster_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_size %>
+    <%= form.number_field :max_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_size %>
+    <%= form.number_field :min_size %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
