@@ -10,24 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_24_191756) do
+ActiveRecord::Schema.define(version: 2018_12_27_003912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "broodlings", force: :cascade do |t|
-    t.string "name"
-    t.string "stats"
-    t.integer "base_points"
+  create_table "broods", force: :cascade do |t|
+    t.string "type"
+    t.integer "min_size"
+    t.integer "max_size"
+    t.integer "size"
+    t.text "profile"
+    t.integer "points_per_model"
     t.string "battlefield_role"
+    t.integer "roster_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "broods", force: :cascade do |t|
-    t.integer "roster_id"
-    t.integer "max_size"
-    t.integer "min_size"
+  create_table "one_or_none_categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "brood_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "one_or_none_choices", force: :cascade do |t|
+    t.string "name"
+    t.integer "points"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,26 +47,25 @@ ActiveRecord::Schema.define(version: 2018_12_24_191756) do
     t.string "name"
     t.integer "points"
     t.boolean "optional"
-    t.string "stats"
     t.boolean "weapon"
     t.boolean "wargear"
-    t.boolean "one_or_none"
-    t.string "group"
+    t.string "profile"
+    t.integer "brood_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "rosters", force: :cascade do |t|
     t.string "name"
-    t.integer "max_points"
+    t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "special_rules", force: :cascade do |t|
-    t.integer "ruleholder_id"
     t.string "name"
     t.string "text"
+    t.integer "ruleholder_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

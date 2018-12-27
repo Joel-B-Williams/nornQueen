@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  text: MyString
-  ruleholder_id: 1
+  brood_id: 1
 
 two:
   name: MyString
-  text: MyString
-  ruleholder_id: 1
+  brood_id: 1

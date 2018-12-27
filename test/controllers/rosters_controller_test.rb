@@ -17,7 +17,7 @@ class RostersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create roster" do
     assert_difference('Roster.count') do
-      post rosters_url, params: { roster: { max_points: @roster.max_points, name: @roster.name } }
+      post rosters_url, params: { roster: { name: @roster.name, points: @roster.points } }
     end
 
     assert_redirected_to roster_url(Roster.last)
@@ -34,7 +34,7 @@ class RostersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update roster" do
-    patch roster_url(@roster), params: { roster: { max_points: @roster.max_points, name: @roster.name } }
+    patch roster_url(@roster), params: { roster: { name: @roster.name, points: @roster.points } }
     assert_redirected_to roster_url(@roster)
   end
 

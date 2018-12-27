@@ -14,8 +14,8 @@ class RostersTest < ApplicationSystemTestCase
     visit rosters_url
     click_on "New Roster"
 
-    fill_in "Max points", with: @roster.max_points
     fill_in "Name", with: @roster.name
+    fill_in "Points", with: @roster.points
     click_on "Create Roster"
 
     assert_text "Roster was successfully created"
@@ -26,8 +26,8 @@ class RostersTest < ApplicationSystemTestCase
     visit rosters_url
     click_on "Edit", match: :first
 
-    fill_in "Max points", with: @roster.max_points
     fill_in "Name", with: @roster.name
+    fill_in "Points", with: @roster.points
     click_on "Update Roster"
 
     assert_text "Roster was successfully updated"

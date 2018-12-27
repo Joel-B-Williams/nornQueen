@@ -4,11 +4,10 @@ class CreateOptions < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :points
       t.boolean :optional
-      t.string :stats
       t.boolean :weapon
       t.boolean :wargear
-      t.boolean :one_or_none
-      t.string :group
+      t.string :profile
+      t.integer :brood_id
 
       t.timestamps
     end

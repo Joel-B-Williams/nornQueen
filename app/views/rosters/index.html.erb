@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Max points</th>
+      <th>Points</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @rosters.each do |roster| %>
       <tr>
         <td><%= roster.name %></td>
-        <td><%= roster.max_points %></td>
+        <td><%= roster.points %></td>
         <td><%= link_to 'Show', roster %></td>
         <td><%= link_to 'Edit', edit_roster_path(roster) %></td>
         <td><%= link_to 'Destroy', roster, method: :delete, data: { confirm: 'Are you sure?' } %></td>

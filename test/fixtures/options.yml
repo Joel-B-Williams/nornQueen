@@ -4,18 +4,16 @@ one:
   name: MyString
   points: 1
   optional: false
-  stats: MyString
   weapon: false
   wargear: false
-  one_or_none: false
-  group: MyString
+  profile: MyString
+  brood_id: 1
 
 two:
   name: MyString
   points: 1
   optional: false
-  stats: MyString
   weapon: false
   wargear: false
-  one_or_none: false
-  group: MyString
+  profile: MyString
+  brood_id: 1

@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  max_points: 1
+  points: 1
 
 two:
   name: MyString
-  max_points: 1
+  points: 1
