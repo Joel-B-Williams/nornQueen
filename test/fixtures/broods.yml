@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  min_size: 1
+  max_size: 1
+  size: 1
+  profile: MyText
+  points_per_model: 1
+  battlefield_role: MyString
+  roster_id: 1
+
+two:
+  type: 
+  min_size: 1
+  max_size: 1
+  size: 1
+  profile: MyText
+  points_per_model: 1
+  battlefield_role: MyString
+  roster_id: 1

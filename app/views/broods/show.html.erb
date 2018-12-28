@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Roster:</strong>
+  <%= @brood.roster_id %>
+</p>
+
+<p>
+  <strong>Max size:</strong>
+  <%= @brood.max_size %>
+</p>
+
+<p>
+  <strong>Min size:</strong>
+  <%= @brood.min_size %>
+</p>
+
+<%= link_to 'Edit', edit_brood_path(@brood) %> |
+<%= link_to 'Back', broods_path %>

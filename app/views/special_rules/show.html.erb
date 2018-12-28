@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ruleholder:</strong>
+  <%= @special_rule.ruleholder_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @special_rule.name %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @special_rule.text %>
+</p>
+
+<%= link_to 'Edit', edit_special_rule_path(@special_rule) %> |
+<%= link_to 'Back', special_rules_path %>

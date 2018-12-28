@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @option.name %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @option.points %>
+</p>
+
+<p>
+  <strong>Optional:</strong>
+  <%= @option.optional %>
+</p>
+
+<p>
+  <strong>Stats:</strong>
+  <%= @option.stats %>
+</p>
+
+<p>
+  <strong>Weapon:</strong>
+  <%= @option.weapon %>
+</p>
+
+<p>
+  <strong>Wargear:</strong>
+  <%= @option.wargear %>
+</p>
+
+<p>
+  <strong>One or none:</strong>
+  <%= @option.one_or_none %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @option.group %>
+</p>
+
+<%= link_to 'Edit', edit_option_path(@option) %> |
+<%= link_to 'Back', options_path %>
