@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_003912) do
+ActiveRecord::Schema.define(version: 2018_12_28_200111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "broods", force: :cascade do |t|
-    t.string "type"
+    t.string "species"
     t.integer "min_size"
     t.integer "max_size"
     t.integer "size"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2018_12_27_003912) do
     t.integer "ruleholder_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ruleholder_type"
   end
 
 end

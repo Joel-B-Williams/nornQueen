@@ -15,8 +15,25 @@ class BroodsController < ApplicationController
   # GET /broods/new
   def new
     @brood = Brood.new
-  end
+    @roster_id = params[:roster_id]
+    role = params[:role]
+    case role
+    when "hq"
+      options = %w(hiveTyrant tyranidPrime broodlord neurothrope tervigon malanthrope)
+    when "elite"
+      options = %w(lictors hiveGuard tyrantGuard venomthropes zoanthropes)
+    when "troops"
+      options = %w(termagants hormagaunts genestealers rippers)
+    when "fastAttack"
+      options = %w(shrikes raveners)
+    when "heavySupport"
+      options = %w(biovores tyrannofex carnifex exocrine)
+    else
+      options = ["Unknown biomass"]
+    end
 
+    @options = options
+  end
   # GET /broods/1/edit
   def edit
   end
@@ -24,7 +41,38 @@ class BroodsController < ApplicationController
   # POST /broods
   # POST /broods.json
   def create
-    @brood = Brood.new(brood_params)
+    choice = params["commit"]
+    roster_id = params["roster"]["id"]
+    case choice
+    when "carnifex"
+      brood_params = {
+        # "brood" => {
+          :roster_id => roster_id,
+          :species => choice,
+          :min_size => 1,
+          :max_size => 3,
+          :size => 1,
+          :points_per_model => 82,
+          :battlefield_role => "heavySupport",
+          :profile => "{
+            'M': '7',
+            'WS': '4+',
+            'BS': '3+',
+            'S': '6',
+            'T': '7',
+            'W': '8',
+            'A': '4',
+            'Ld': '6',
+            'Sv': '3+'
+          }"
+        }
+      # }
+
+      @brood = Brood.new(brood_params)
+    else
+      flash[:error] = "You need to pick a Carnifex"
+      redirect_to root_path
+    end
 
     respond_to do |format|
       if @brood.save
@@ -67,8 +115,5 @@ class BroodsController < ApplicationController
       @brood = Brood.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def brood_params
-      params.require(:brood).permit(:roster_id, :max_size, :min_size)
-    end
+   
 end

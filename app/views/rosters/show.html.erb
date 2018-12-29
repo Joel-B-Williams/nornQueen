@@ -12,3 +12,17 @@
 
 <%= link_to 'Edit', edit_roster_path(@roster) %> |
 <%= link_to 'Back', rosters_path %>
+
+<ul>
+  <% %w(hq elite troops fastAttack heavySupport).each do |br| %>
+    <li> <%= link_to br, new_roster_brood_path(@roster, role: br) %>
+    <% if @roster.broods.where(battlefield_role: br).length > 0 %>
+      <ul>
+      <% @roster.broods.where(battlefield_role: br).each do |brood| %>
+      <li> <%= brood.species %> </li>
+      <% end %>
+      </ul>
+    <% end %>
+    </li>
+  <% end %>
+</ul>
