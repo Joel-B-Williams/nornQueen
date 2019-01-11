@@ -1,0 +1,23 @@
+<%= form_with(model: brood, local: true) do |form| %>
+  <% if brood.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(brood.errors.count, "error") %> prohibited this brood from being saved:</h2>
+
+      <ul>
+      <% brood.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <% options.each do |option| %>
+  
+  <div class="field">
+  <%= form.submit option %>
+  </div>
+  <div>
+  <%= hidden_field(:roster, :id, value: roster_id) %>
+  </div>
+  <% end %>
+<% end %>
